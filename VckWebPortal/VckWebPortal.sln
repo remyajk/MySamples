@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VckWebPortal", "VckWebPortal\VckWebPortal.csproj", "{5F9E2F0D-0B67-4ACF-A93E-8EBFFCD7EDCC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VckWebPortal.Tests", "VckWebPortal.Tests\VckWebPortal.Tests.csproj", "{5EED70FC-1893-4EC3-A58E-C58B49E03451}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{31AB4AEE-6EDB-4308-B6A9-2332F6AB8A88}"
+	ProjectSection(SolutionItems) = preProject
+		VCK_WebPortal_Handbuch.docx = VCK_WebPortal_Handbuch.docx
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://rzsrvap3010:8080/tfs/payment%20solution%20ag
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = VckWebPortal.Tests\\VckWebPortal.Tests.csproj
+		SccProjectName1 = VckWebPortal.Tests
+		SccLocalPath1 = VckWebPortal.Tests
+		SccProjectUniqueName2 = VckWebPortal\\VckWebPortal.csproj
+		SccProjectName2 = VckWebPortal
+		SccLocalPath2 = VckWebPortal
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F9E2F0D-0B67-4ACF-A93E-8EBFFCD7EDCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F9E2F0D-0B67-4ACF-A93E-8EBFFCD7EDCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F9E2F0D-0B67-4ACF-A93E-8EBFFCD7EDCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F9E2F0D-0B67-4ACF-A93E-8EBFFCD7EDCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EED70FC-1893-4EC3-A58E-C58B49E03451}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EED70FC-1893-4EC3-A58E-C58B49E03451}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EED70FC-1893-4EC3-A58E-C58B49E03451}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EED70FC-1893-4EC3-A58E-C58B49E03451}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

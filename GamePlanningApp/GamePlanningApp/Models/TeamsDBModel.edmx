@@ -1,0 +1,380 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TeamsDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Rounds">
+          <Key>
+            <PropertyRef Name="RoundId" />
+          </Key>
+          <Property Name="RoundId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Catogory" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="Pair1" Type="int" />
+          <Property Name="Pair2" Type="int" />
+          <Property Name="Pair3" Type="int" />
+          <Property Name="Pair4" Type="int" />
+          <Property Name="Pair5" Type="int" />
+        </EntityType>
+        <EntityType Name="TeamPairs">
+          <Key>
+            <PropertyRef Name="PairId" />
+          </Key>
+          <Property Name="PairId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Catogory" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="Team1" Type="int" />
+          <Property Name="Team2" Type="int" />
+        </EntityType>
+        <EntityType Name="Teams">
+          <Key>
+            <PropertyRef Name="TeamId" />
+          </Key>
+          <Property Name="TeamId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Catogory" Type="char" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Pair1">
+          <End Role="TeamPairs" Type="Self.TeamPairs" Multiplicity="0..1" />
+          <End Role="Rounds" Type="Self.Rounds" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TeamPairs">
+              <PropertyRef Name="PairId" />
+            </Principal>
+            <Dependent Role="Rounds">
+              <PropertyRef Name="Pair1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pair2">
+          <End Role="TeamPairs" Type="Self.TeamPairs" Multiplicity="0..1" />
+          <End Role="Rounds" Type="Self.Rounds" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TeamPairs">
+              <PropertyRef Name="PairId" />
+            </Principal>
+            <Dependent Role="Rounds">
+              <PropertyRef Name="Pair2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pair3">
+          <End Role="TeamPairs" Type="Self.TeamPairs" Multiplicity="0..1" />
+          <End Role="Rounds" Type="Self.Rounds" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TeamPairs">
+              <PropertyRef Name="PairId" />
+            </Principal>
+            <Dependent Role="Rounds">
+              <PropertyRef Name="Pair3" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pair4">
+          <End Role="TeamPairs" Type="Self.TeamPairs" Multiplicity="0..1" />
+          <End Role="Rounds" Type="Self.Rounds" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TeamPairs">
+              <PropertyRef Name="PairId" />
+            </Principal>
+            <Dependent Role="Rounds">
+              <PropertyRef Name="Pair4" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pair5">
+          <End Role="TeamPairs" Type="Self.TeamPairs" Multiplicity="0..1" />
+          <End Role="Rounds" Type="Self.Rounds" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TeamPairs">
+              <PropertyRef Name="PairId" />
+            </Principal>
+            <Dependent Role="Rounds">
+              <PropertyRef Name="Pair5" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Team1">
+          <End Role="Teams" Type="Self.Teams" Multiplicity="0..1" />
+          <End Role="TeamPairs" Type="Self.TeamPairs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teams">
+              <PropertyRef Name="TeamId" />
+            </Principal>
+            <Dependent Role="TeamPairs">
+              <PropertyRef Name="Team1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Team2">
+          <End Role="Teams" Type="Self.Teams" Multiplicity="0..1" />
+          <End Role="TeamPairs" Type="Self.TeamPairs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teams">
+              <PropertyRef Name="TeamId" />
+            </Principal>
+            <Dependent Role="TeamPairs">
+              <PropertyRef Name="Team2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TeamsDBModelStoreContainer">
+          <EntitySet Name="Rounds" EntityType="Self.Rounds" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TeamPairs" EntityType="Self.TeamPairs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Teams" EntityType="Self.Teams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Pair1" Association="Self.FK_Pair1">
+            <End Role="TeamPairs" EntitySet="TeamPairs" />
+            <End Role="Rounds" EntitySet="Rounds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pair2" Association="Self.FK_Pair2">
+            <End Role="TeamPairs" EntitySet="TeamPairs" />
+            <End Role="Rounds" EntitySet="Rounds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pair3" Association="Self.FK_Pair3">
+            <End Role="TeamPairs" EntitySet="TeamPairs" />
+            <End Role="Rounds" EntitySet="Rounds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pair4" Association="Self.FK_Pair4">
+            <End Role="TeamPairs" EntitySet="TeamPairs" />
+            <End Role="Rounds" EntitySet="Rounds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pair5" Association="Self.FK_Pair5">
+            <End Role="TeamPairs" EntitySet="TeamPairs" />
+            <End Role="Rounds" EntitySet="Rounds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Team1" Association="Self.FK_Team1">
+            <End Role="Teams" EntitySet="Teams" />
+            <End Role="TeamPairs" EntitySet="TeamPairs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Team2" Association="Self.FK_Team2">
+            <End Role="Teams" EntitySet="Teams" />
+            <End Role="TeamPairs" EntitySet="TeamPairs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TeamsDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Round">
+          <Key>
+            <PropertyRef Name="RoundId" />
+          </Key>
+          <Property Name="RoundId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Catogory" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Pair1" Type="Int32" />
+          <Property Name="Pair2" Type="Int32" />
+          <Property Name="Pair3" Type="Int32" />
+          <Property Name="Pair4" Type="Int32" />
+          <Property Name="Pair5" Type="Int32" />
+          <NavigationProperty Name="TeamPair" Relationship="Self.FK_Pair1" FromRole="Rounds" ToRole="TeamPairs" />
+          <NavigationProperty Name="TeamPair1" Relationship="Self.FK_Pair2" FromRole="Rounds" ToRole="TeamPairs" />
+          <NavigationProperty Name="TeamPair2" Relationship="Self.FK_Pair3" FromRole="Rounds" ToRole="TeamPairs" />
+          <NavigationProperty Name="TeamPair3" Relationship="Self.FK_Pair4" FromRole="Rounds" ToRole="TeamPairs" />
+          <NavigationProperty Name="TeamPair4" Relationship="Self.FK_Pair5" FromRole="Rounds" ToRole="TeamPairs" />
+        </EntityType>
+        <EntityType Name="TeamPair">
+          <Key>
+            <PropertyRef Name="PairId" />
+          </Key>
+          <Property Name="PairId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Catogory" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Team1" Type="Int32" />
+          <Property Name="Team2" Type="Int32" />
+          <NavigationProperty Name="Rounds" Relationship="Self.FK_Pair1" FromRole="TeamPairs" ToRole="Rounds" />
+          <NavigationProperty Name="Rounds1" Relationship="Self.FK_Pair2" FromRole="TeamPairs" ToRole="Rounds" />
+          <NavigationProperty Name="Rounds2" Relationship="Self.FK_Pair3" FromRole="TeamPairs" ToRole="Rounds" />
+          <NavigationProperty Name="Rounds3" Relationship="Self.FK_Pair4" FromRole="TeamPairs" ToRole="Rounds" />
+          <NavigationProperty Name="Rounds4" Relationship="Self.FK_Pair5" FromRole="TeamPairs" ToRole="Rounds" />
+          <NavigationProperty Name="Team" Relationship="Self.FK_Team1" FromRole="TeamPairs" ToRole="Teams" />
+          <NavigationProperty Name="Team3" Relationship="Self.FK_Team2" FromRole="TeamPairs" ToRole="Teams" />
+        </EntityType>
+        <EntityType Name="Team">
+          <Key>
+            <PropertyRef Name="TeamId" />
+          </Key>
+          <Property Name="TeamId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Catogory" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="TeamPairs" Relationship="Self.FK_Team1" FromRole="Teams" ToRole="TeamPairs" />
+          <NavigationProperty Name="TeamPairs1" Relationship="Self.FK_Team2" FromRole="Teams" ToRole="TeamPairs" />
+        </EntityType>
+        <Association Name="FK_Pair1">
+          <End Role="TeamPairs" Type="Self.TeamPair" Multiplicity="0..1" />
+          <End Role="Rounds" Type="Self.Round" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TeamPairs">
+              <PropertyRef Name="PairId" />
+            </Principal>
+            <Dependent Role="Rounds">
+              <PropertyRef Name="Pair1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pair2">
+          <End Role="TeamPairs" Type="Self.TeamPair" Multiplicity="0..1" />
+          <End Role="Rounds" Type="Self.Round" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TeamPairs">
+              <PropertyRef Name="PairId" />
+            </Principal>
+            <Dependent Role="Rounds">
+              <PropertyRef Name="Pair2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pair3">
+          <End Role="TeamPairs" Type="Self.TeamPair" Multiplicity="0..1" />
+          <End Role="Rounds" Type="Self.Round" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TeamPairs">
+              <PropertyRef Name="PairId" />
+            </Principal>
+            <Dependent Role="Rounds">
+              <PropertyRef Name="Pair3" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pair4">
+          <End Role="TeamPairs" Type="Self.TeamPair" Multiplicity="0..1" />
+          <End Role="Rounds" Type="Self.Round" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TeamPairs">
+              <PropertyRef Name="PairId" />
+            </Principal>
+            <Dependent Role="Rounds">
+              <PropertyRef Name="Pair4" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pair5">
+          <End Role="TeamPairs" Type="Self.TeamPair" Multiplicity="0..1" />
+          <End Role="Rounds" Type="Self.Round" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TeamPairs">
+              <PropertyRef Name="PairId" />
+            </Principal>
+            <Dependent Role="Rounds">
+              <PropertyRef Name="Pair5" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Team1">
+          <End Role="Teams" Type="Self.Team" Multiplicity="0..1" />
+          <End Role="TeamPairs" Type="Self.TeamPair" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teams">
+              <PropertyRef Name="TeamId" />
+            </Principal>
+            <Dependent Role="TeamPairs">
+              <PropertyRef Name="Team1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Team2">
+          <End Role="Teams" Type="Self.Team" Multiplicity="0..1" />
+          <End Role="TeamPairs" Type="Self.TeamPair" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teams">
+              <PropertyRef Name="TeamId" />
+            </Principal>
+            <Dependent Role="TeamPairs">
+              <PropertyRef Name="Team2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TeamsDBEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Rounds" EntityType="Self.Round" />
+          <EntitySet Name="TeamPairs" EntityType="Self.TeamPair" />
+          <EntitySet Name="Teams" EntityType="Self.Team" />
+          <AssociationSet Name="FK_Pair1" Association="Self.FK_Pair1">
+            <End Role="TeamPairs" EntitySet="TeamPairs" />
+            <End Role="Rounds" EntitySet="Rounds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pair2" Association="Self.FK_Pair2">
+            <End Role="TeamPairs" EntitySet="TeamPairs" />
+            <End Role="Rounds" EntitySet="Rounds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pair3" Association="Self.FK_Pair3">
+            <End Role="TeamPairs" EntitySet="TeamPairs" />
+            <End Role="Rounds" EntitySet="Rounds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pair4" Association="Self.FK_Pair4">
+            <End Role="TeamPairs" EntitySet="TeamPairs" />
+            <End Role="Rounds" EntitySet="Rounds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pair5" Association="Self.FK_Pair5">
+            <End Role="TeamPairs" EntitySet="TeamPairs" />
+            <End Role="Rounds" EntitySet="Rounds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Team1" Association="Self.FK_Team1">
+            <End Role="Teams" EntitySet="Teams" />
+            <End Role="TeamPairs" EntitySet="TeamPairs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Team2" Association="Self.FK_Team2">
+            <End Role="Teams" EntitySet="Teams" />
+            <End Role="TeamPairs" EntitySet="TeamPairs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TeamsDBModelStoreContainer" CdmEntityContainer="TeamsDBEntities1">
+          <EntitySetMapping Name="Rounds">
+            <EntityTypeMapping TypeName="TeamsDBModel.Round">
+              <MappingFragment StoreEntitySet="Rounds">
+                <ScalarProperty Name="RoundId" ColumnName="RoundId" />
+                <ScalarProperty Name="Catogory" ColumnName="Catogory" />
+                <ScalarProperty Name="Pair1" ColumnName="Pair1" />
+                <ScalarProperty Name="Pair2" ColumnName="Pair2" />
+                <ScalarProperty Name="Pair3" ColumnName="Pair3" />
+                <ScalarProperty Name="Pair4" ColumnName="Pair4" />
+                <ScalarProperty Name="Pair5" ColumnName="Pair5" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TeamPairs">
+            <EntityTypeMapping TypeName="TeamsDBModel.TeamPair">
+              <MappingFragment StoreEntitySet="TeamPairs">
+                <ScalarProperty Name="PairId" ColumnName="PairId" />
+                <ScalarProperty Name="Catogory" ColumnName="Catogory" />
+                <ScalarProperty Name="Team1" ColumnName="Team1" />
+                <ScalarProperty Name="Team2" ColumnName="Team2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Teams">
+            <EntityTypeMapping TypeName="TeamsDBModel.Team">
+              <MappingFragment StoreEntitySet="Teams">
+                <ScalarProperty Name="TeamId" ColumnName="TeamId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Catogory" ColumnName="Catogory" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

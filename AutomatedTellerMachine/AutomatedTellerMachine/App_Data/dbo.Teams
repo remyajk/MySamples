@@ -1,0 +1,17 @@
+﻿CREATE TABLE [dbo].[Teams] (
+    [TeamID]      INT            IDENTITY (1, 1) NOT NULL,
+    [Name]        NVARCHAR (20)  NOT NULL,
+    [TeamCategory]      NVARCHAR (10)  NULL,
+    CONSTRAINT [PK_Team] PRIMARY KEY CLUSTERED ([TeamID] ASC),
+    CONSTRAINT [CK_Category] CHECK ([TeamCategory] = 'm' OR [TeamCategory] = 'f')
+);
+
+
+GO
+CREATE NONCLUSTERED INDEX [LastName]
+    ON [dbo].[Employees]([LastName] ASC);
+
+
+GO
+CREATE NONCLUSTERED INDEX [PostalCode]
+    ON [dbo].[Employees]([PostalCode] ASC);

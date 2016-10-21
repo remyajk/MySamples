@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3E9BA194-AA48-40C1-834E-EF950E8E9AC0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8F4EE4D3-4387-4208-A677-288BA12575DB}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MvcMovie", "src\MvcMovie\MvcMovie.xproj", "{A896C0C2-96F7-491E-A32A-8981CF5F1F0C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A896C0C2-96F7-491E-A32A-8981CF5F1F0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A896C0C2-96F7-491E-A32A-8981CF5F1F0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A896C0C2-96F7-491E-A32A-8981CF5F1F0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A896C0C2-96F7-491E-A32A-8981CF5F1F0C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A896C0C2-96F7-491E-A32A-8981CF5F1F0C} = {3E9BA194-AA48-40C1-834E-EF950E8E9AC0}
+	EndGlobalSection
+EndGlobal
